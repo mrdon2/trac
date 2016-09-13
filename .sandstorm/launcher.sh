@@ -26,7 +26,7 @@ fi
 
 TRACD_PID=/var/run/tracd
 # Spawn tracd
-HOME=/var PKG_RESOURCES_CACHE_ZIP_MANIFESTS=true ./venv/bin/tracd -d --pidfile=$TRACD_PID -s --port 3050 /var/project 
+HOME=/var PKG_RESOURCES_CACHE_ZIP_MANIFESTS=true ./venv/bin/tracd -d --base-path= --pidfile=$TRACD_PID -s --port 3050 /var/project
 
 # Wait for tracd to startup
 while [ ! -e $TRACD_PID ] ; do

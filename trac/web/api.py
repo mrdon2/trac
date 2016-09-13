@@ -524,10 +524,10 @@ class Request(object):
             status = 302 # 'Found' -- normal temporary redirect
 
         self.send_response(status)
-        if not url.startswith(('http://', 'https://')):
-            # Make sure the URL is absolute
-            scheme, host = urlparse.urlparse(self.base_url)[:2]
-            url = urlparse.urlunparse((scheme, host, url, None, None, None))
+        # if not url.startswith(('http://', 'https://')):
+        #     # Make sure the URL is absolute
+        #     scheme, host = urlparse.urlparse(self.base_url)[:2]
+        #     url = urlparse.urlunparse((scheme, host, url, None, None, None))
 
         # Workaround #10382, IE6-IE9 bug when post and redirect with hash
         if status == 303 and '#' in url:
