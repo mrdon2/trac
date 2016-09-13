@@ -12,7 +12,7 @@ mkdir -p /var/run
 
 cd /opt/app
 
-rm -rf /var/project
+# rm -rf /var/project
 if [ ! -d "/var/project" ]; then
     mkdir -p /var/project
     HOME=/var PKG_RESOURCES_CACHE_ZIP_MANIFESTS=true ./venv/bin/trac-admin /var/project initenv "My Project" "sqlite:db/trac.db"
